@@ -1,0 +1,51 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.kk.pluginLearn</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>PluginLearn</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="1259183297@qq.com" url="https://www.yourcompany.com">kk</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    short description for your plugin here.<br>
+    <em> tags may be used</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.all</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!--  添加我自己的extensions   -->
+    </extensions>
+
+    <!--    <resource-bundle>messages.BasicActionsBundle</resource-bundle>-->
+
+    <actions>
+        <group id="com.kk.pluginlearn.NovaGroupActions"
+               class="com.kk.pluginlearn.NovaGroupActions"
+               text="Nova"
+               description="Nova tools group">
+            <add-to-group group-id="NewGroup" anchor="first"/>
+
+            <action class="com.kk.pluginlearn.NovaGetXAnAction" id="com.kk.newNovaAction"
+                    text="Nova GetX"
+                    description="Generate nove getX files"
+                    icon="AllIcons.Actions.AddFile"/>
+
+            <action id="com.kk.pluginlearn.NovaListPageAnAction" class="com.kk.pluginlearn.NovaListPageAnAction"
+                    text="Nova List" description="Generate Nova List Page"
+                    icon="AllIcons.Actions.AddList"/>
+        </group>
+
+    </actions>
+</idea-plugin>
