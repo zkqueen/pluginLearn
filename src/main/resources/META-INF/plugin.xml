@@ -42,9 +42,9 @@
                     description="Generate nove getX files"
                     icon="AllIcons.Actions.AddFile"/>
 
-            <action id="com.kk.pluginlearn.NovaListPageAnAction" class="com.kk.pluginlearn.NovaListPageAnAction"
+            <!--<action id="com.kk.pluginlearn.NovaListPageAnAction" class="com.kk.pluginlearn.NovaListPageAnAction"
                     text="Nova List" description="Generate Nova List Page"
-                    icon="AllIcons.Actions.AddList"/>
+                    icon="AllIcons.Actions.AddList"/>-->
         </group>
 
     </actions>
