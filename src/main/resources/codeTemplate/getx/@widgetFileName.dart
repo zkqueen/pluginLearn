@@ -1,6 +1,6 @@
-import 'package:biz/biz/game_center/test/test_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:service/common/getx/get_abs_state.dart';
+import '@controllerFileName.dart';
 
 class @WidgetClassName extends StatefulWidget {
   const @WidgetClassName({super.key});

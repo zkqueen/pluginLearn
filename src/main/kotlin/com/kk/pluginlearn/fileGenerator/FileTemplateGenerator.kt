@@ -1,5 +1,4 @@
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import com.kk.pluginlearn.ui.WidgetType
 import java.io.IOException
@@ -24,7 +23,7 @@ class FileTemplateGenerator(
                 val classLoader = this::class.java.classLoader
                 val widgetTemplateStream = classLoader.getResourceAsStream("codeTemplate/getx/@widgetFileName.dart")
                 val controllerTemplateStream =
-                    classLoader.getResourceAsStream("codeTemplate/getx/@controlleFileName.dart")
+                    classLoader.getResourceAsStream("codeTemplate/getx/@controllerFileName.dart")
 
                 if (widgetTemplateStream != null && controllerTemplateStream != null) {
                     val widgetTemplateContent = widgetTemplateStream.bufferedReader().use { it.readText() }
@@ -35,6 +34,7 @@ class FileTemplateGenerator(
                         .replace("@WidgetClassName", widgetClassName)
                         .replace("@WidgetStateClassName", widgetStateClassName)
                         .replace("@ControllerName", controllerName)
+                        .replace("@controllerFileName", controllerFileName)
 
                     val finalControllerContent = controllerTemplateContent
                         .replace("@ControllerName", controllerName)
