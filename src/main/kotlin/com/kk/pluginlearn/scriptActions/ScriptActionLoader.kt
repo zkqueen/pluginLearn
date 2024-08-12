@@ -1,4 +1,4 @@
-package com.kk.pluginlearn.dynamicActions
+package com.kk.pluginlearn.scriptActions
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -11,9 +11,9 @@ import com.intellij.openapi.project.Project
 import java.io.File
 import java.io.FileReader
 
-class DynamicActionLoader(project: Project) : DumbAware {
+class ScriptActionLoader(project: Project) : DumbAware {
 
-    val actionHelper: ActionPerformedHelper = ActionPerformedHelper(project)
+    val actionHelper: ScriptActionPerformedHelper = ScriptActionPerformedHelper(project)
 
     fun loadActions(project: Project) {
         try {
