@@ -1,4 +1,4 @@
-package com.kk.pluginlearn
+package com.kk.pluginlearn.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

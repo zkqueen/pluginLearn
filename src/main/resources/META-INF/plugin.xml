@@ -7,16 +7,22 @@
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>Nova</name>
 
+    <version>1.0.1</version>
+
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="1259183297@qq.com" url="https://www.yourcompany.com">kk</vendor>
+    <vendor email="1259183297@qq.com" url="https://github.com/zkqueen">kk</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    集成nova项目常用的插件，如Getx快速生成，List分页加载等功能.<br>
+    Integrate common plug-ins of nova projects, such as Getx fast generation, List paging loading and other functions.
+    As well as common script fast execution, some code templates, etc. The current version only has GetX fast generation,
+     and it will be iterated later when there is time<br>
     <em> nova Plugin </em>
   ]]></description>
+
+    <change-notes>支持运行dart及sh脚本，且可以自定义路径</change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -26,26 +32,38 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <!--  添加我自己的extensions   -->
+        <postStartupActivity implementation="com.kk.pluginlearn.NovaStartupActivity"/>
     </extensions>
 
     <!--    <resource-bundle>messages.BasicActionsBundle</resource-bundle>-->
 
     <actions>
-        <group id="com.kk.pluginlearn.NovaGroupActions"
-               class="com.kk.pluginlearn.NovaGroupActions"
+        <group id="com.kk.pluginlearn.actions.NovaGroupActions"
+               class="com.kk.pluginlearn.actions.NovaGroupActions"
                text="Nova"
                description="Nova tools group">
             <add-to-group group-id="NewGroup" anchor="first"/>
 
-            <action class="com.kk.pluginlearn.NovaGetXAnAction" id="com.kk.newNovaAction"
+            <action class="com.kk.pluginlearn.actions.NovaGetXAnAction" id="com.kk.newNovaAction"
                     text="Nova GetX"
                     description="Generate nove getX files"
                     icon="AllIcons.Actions.AddFile"/>
 
-            <!--<action id="com.kk.pluginlearn.NovaListPageAnAction" class="com.kk.pluginlearn.NovaListPageAnAction"
+            <!--<action id="com.kk.pluginlearn.actions.NovaListPageAnAction" class="com.kk.pluginlearn.actions.NovaListPageAnAction"
                     text="Nova List" description="Generate Nova List Page"
                     icon="AllIcons.Actions.AddList"/>-->
         </group>
 
+        <group id="NovaMenu"
+               class="com.kk.pluginlearn.actions.NovaMenuGroupActions"
+               text="Nova"
+               description="Nova window menu actions"
+               popup="true">
+
+            <add-to-group group-id="MainMenu" anchor="last"/>
+
+        </group>
+
     </actions>
+
 </idea-plugin>

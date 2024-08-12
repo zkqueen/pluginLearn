@@ -1,4 +1,4 @@
-package com.kk.pluginlearn
+package com.kk.pluginlearn.actions
 
 import FileTemplateGenerator
 import com.intellij.openapi.actionSystem.AnAction
