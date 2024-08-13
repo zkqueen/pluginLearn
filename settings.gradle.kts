@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "pluginLearn"
+rootProject.name = "nova"

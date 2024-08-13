@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.kk"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
   mavenCentral()
@@ -17,7 +17,7 @@ intellij {
 //  version.set("2023.1.5")
   type.set("IC") // Target IDE Platform
   localPath.set("/Applications/Android Studio 2.app/Contents")
-  plugins.set(listOf(/* Plugin Dependencies */))
+  plugins.set(listOf())
 }
 
 tasks {
